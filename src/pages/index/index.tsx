@@ -1,7 +1,7 @@
 import React, { FC, useCallback } from 'react';
 import { View, Text, Button, Image } from '@tarojs/components';
 import { useEnv, useNavigationBar, useModal, useToast } from 'taro-hooks';
-import { connect, useSelector } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import { ConnectState } from '../../types/connect';
 
 import logo from './hook.png';
@@ -12,10 +12,8 @@ interface IProps {
 
 }
 
-const Index: FC<IProps> = () => {
+const Index: FC<IProps> = (props) => {
   const { sys } = useSelector((state: ConnectState) => state);
-  console.log(sys);
-
   const env = useEnv();
   const [_, { setTitle }] = useNavigationBar({ title: 'Taro Hooks' });
   const [show] = useModal({
@@ -26,12 +24,15 @@ const Index: FC<IProps> = () => {
     mask: true
   });
   const [showToast] = useToast({ mask: true });
+  const dispatch = useDispatch();
+  
 
   const handleModal = useCallback(() => {
+    dispatch({ type: 'sys/save', payload: 'TEST' });
     show({ content: '不如给一个star⭐️!' }).then(() => {
       showToast({ title: '点击了支持!' });
     });
-  }, [show, showToast]);
+  }, [show, showToast, dispatch]);
 
   return (
     <View className="wrapper">
