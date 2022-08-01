@@ -29,7 +29,7 @@ class Nodes extends Component<IProps, PageState> {
 
   render() {
     return (
-      <View className="index">
+      <View className="list">
         <View>
           <Text>Hello, World</Text>
           <Button>点击</Button>

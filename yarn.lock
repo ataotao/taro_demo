@@ -12156,6 +12156,13 @@ taro-plugin-tailwind@^1.2.8:
     postcss-selector-replace "^1.0.2"
     windicss-webpack-plugin "^1.6.6"
 
+tarojs-plugin-generator@^0.0.21:
+  version "0.0.21"
+  resolved "https://registry.npmmirror.com/tarojs-plugin-generator/-/tarojs-plugin-generator-0.0.21.tgz#7ec9316ac964178380178242072fa5c127309582"
+  integrity sha512-m96Sr8ryZvkDGCXY3KYHzjgWVybjFlaryScTwk0TdXekJriyfb575eJ7Kj6qk09sEt4dWUxvFY1MzhMZ84Qy7w==
+  dependencies:
+    glob "^7.1.6"
+
 term-size@^1.2.0:
   version "1.2.0"
   resolved "https://registry.npmmirror.com/term-size/-/term-size-1.2.0.tgz#458b83887f288fc56d6fffbfad262e26638efa69"

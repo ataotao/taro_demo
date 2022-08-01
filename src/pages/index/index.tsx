@@ -8,6 +8,8 @@ import logo from './hook.png';
 
 import './index.less';
 
+
+
 interface IProps {
 
 }
@@ -36,7 +38,7 @@ const Index: FC<IProps> = (props) => {
   }, [show, showToast, dispatch]);
 
   return (
-    <View className="wrapper">
+    <View className='wrapper'>
       <Image className="logo" src={logo} />
       <Text className="title">为Taro而设计的Hooks Library</Text>
       <Text className="desc">

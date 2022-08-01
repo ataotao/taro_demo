@@ -1,19 +1,12 @@
 // 使用编译时宏函数 defineAppConfig 包裹配置对象，以获得类型提示和自动补全：
 export default defineAppConfig({
   appId: 'app',
-  pages: [
-    'pages/index/index',
-  ],
+  pages: ['pages/index/index'],
   // 在 `subpackages` 字段添加分包，如果目标是支付宝小程序，还需要加一个字段 `subPackages` 值和 `subpackages` 一致
-  'subpackages': [
-    {
-      'root': 'pages_sub1',
-      'pages': [
-        'nodes/index'
-      ]
-    }
-  ],
-
+  'subpackages': [{
+    'root': 'pages_sub1',
+    'pages': ['nodes/index']
+  }],
   // tabBar: {
   //   list: [{
   //     'iconPath': 'resource/latest.png',
