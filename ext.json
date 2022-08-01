@@ -1,0 +1,13 @@
+{
+  "extEnable": true,
+  "extAppid": "wxc3bcde9ca0b51a20",
+  "directCommit": false,
+  "debug": true,
+  "ext": {
+    "domain": "https://weapp.sopei.cn",
+    "imgDomain": "https://img.sopei.cn",
+    "system": {
+      "ten_sys_flag": "c24a318522e02f17"
+    }
+  }
+}

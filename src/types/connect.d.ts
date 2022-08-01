@@ -1,6 +1,6 @@
-import { EffectsCommandMap } from "dva-core";
-import React from "react";
-import * as H from "history";
+import { EffectsCommandMap } from 'dva-core';
+import React from 'react';
+import * as H from 'history';
 
 /** 全局model类型 */
 export interface ConnectState {

@@ -12,31 +12,35 @@ const config = {
   sourceRoot: 'src',
   outputRoot: `dist/${process.env.TARO_ENV}`,
   plugins: [],
-  defineConstants: {
-  },
+  defineConstants: {},
   copy: {
     patterns: [
+      { from: 'ext.json', to: `dist/${process.env.TARO_ENV}/ext.json`}, // 指定需要 copy 的目录
     ],
-    options: {
-    }
+    options: {}
   },
   framework: 'react',
   alias: {
     '@/components': resolve(__dirname, '..', 'src/components'),
     '@/utils': resolve(__dirname, '..', 'src/utils'),
     '@/service': resolve(__dirname, '..', 'src/service'),
+    'regenerator-runtime': resolve(__dirname, '../node_modules', 'regenerator-runtime'),
   },
+  
   compiler: 'webpack5',
   cache: {
     enable: false // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
   },
+
   mini: {
+    optimizeMainPackage: {
+      enable: true
+    },
+
     postcss: {
       pxtransform: {
         enable: true,
-        config: {
-
-        }
+        config: {}
       },
       url: {
         enable: true,
@@ -59,8 +63,7 @@ const config = {
     postcss: {
       autoprefixer: {
         enable: true,
-        config: {
-        }
+        config: {}
       },
       cssModules: {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
@@ -71,7 +74,7 @@ const config = {
       }
     }
   }
-}
+};
 
 export default function (merge) {
   if (process.env.NODE_ENV === 'development') {

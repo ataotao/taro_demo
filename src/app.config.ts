@@ -1,4 +1,5 @@
 export default {
+  appId: 'app',
   pages: [
     'pages/index/index',
     // 'pages/nodes/index', 把要分包的页面从 `pages` 字段中删除
@@ -7,12 +8,13 @@ export default {
   // 不能在 `pages` 根目录也不能在 pages 目录外，需要在 `pages` 根目录另外新建文件夹做分包
   'subpackages': [
     {
-      'root': 'pages',
+      'root': 'pages_sub1',
       'pages': [
         'nodes/index'
       ]
     }
   ],
+
   // tabBar: {
   //   list: [{
   //     'iconPath': 'resource/latest.png',
