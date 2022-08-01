@@ -1,9 +1,13 @@
-import React, { Component } from 'react';
+import { Component, PropsWithChildren } from 'react';
 import { Provider } from 'react-redux';
 import '@tarojs/async-await';
 import models from './models';
 import dva from './dva';
 import './app.less';
+
+const PROVIDER = Provider as any;
+
+interface IProps extends PropsWithChildren {}
 
 const dvaApp = dva.createApp({
   initialState: {},
@@ -14,7 +18,7 @@ const dvaApp = dva.createApp({
 });
 const store = dvaApp.getStore();
 
-class App extends Component {
+class App extends Component<IProps> {
   componentDidMount() {
     // dvaApp.dispatch({ type: 'sys/error', payload: 'test' });
   }
@@ -25,9 +29,8 @@ class App extends Component {
 
   componentDidCatchError() {}
 
-  // this.props.children 是将要会渲染的页面
   render() {
-    return <Provider store={store}>{this.props.children}</Provider>;
+    return <PROVIDER store={store}>{this.props.children}</PROVIDER>;
   }
 }
 
