@@ -50,7 +50,7 @@ const Index: FC<IProps> = (props) => {
         <Text className="label">运行环境</Text>
         <Text className="note">{env}</Text>
       </View>
-      <Button className="button" onClick={() => setTitle('Taro Hooks Nice!')}>
+      <Button className="button text-center" onClick={() => setTitle('Taro Hooks Nice!')}>
         设置标题
       </Button>
       <Button className="button" onClick={handleModal}>

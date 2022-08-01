@@ -16,7 +16,15 @@ const config = {
   // 项目编译目录
   outputRoot: `dist/${process.env.TARO_ENV}`,
   // Taro 插件配置
-  plugins: [],
+  plugins: [
+    ['taro-plugin-tailwind', {
+      scan: {
+          dirs: ['./src'], // 只扫描 src 目录下的文件
+          exclude: ['dist/**/*'], // 排除 dist 目录
+      },
+      // 具体参数见：https://github.com/windicss/vite-plugin-windicss/blob/main/packages/plugin-utils/src/options.ts#L10
+  }]
+  ],
   // 全局常量设置
   defineConstants: {},
   // 文件 copy 配置

@@ -6,6 +6,8 @@ import Taro from '@tarojs/taro';
 import models from './models';
 import dva from './dva';
 import './app.less';
+// eslint-disable-next-line import/first
+import 'windi.css';
 
 const PROVIDER = Provider as any;
 
@@ -23,7 +25,7 @@ const store = dvaApp.getStore();
 class App extends Component<IProps> {
   componentDidMount() {
     // dvaApp.dispatch({ type: 'sys/error', payload: 'test' });
-
+    
     if (process.env.TARO_ENV === 'weapp') {
       const extConfig = Taro.getExtConfigSync? Taro.getExtConfigSync(): {};
       console.log(extConfig);
