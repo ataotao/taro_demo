@@ -82,6 +82,13 @@ const config = {
   },
   // H5 端专用配置
   h5: {
+    router: {
+      // basename: '919057cc9d0c6b81'
+      customRoutes: {
+        '/pages/index/index': '/:id',
+        '/pages/page/index': '/:id/page',
+      }
+    },
     publicPath: '/',
     staticDirectory: 'static',
     postcss: {

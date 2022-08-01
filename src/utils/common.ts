@@ -27,3 +27,17 @@ export const formatTimeStampToTime = timestamp => {
   // const second = date.getSeconds();
   return `${year}-${month}-${day}`;
 };
+
+
+// 获取商户唯一字符串
+export const getTenSysFlag = () => {
+  // 用户标识字符串
+  const hash = window.location.hash;
+  const regExp = /#\/([a-zA-Z\d]{16})/;
+  const isMatch = hash.match(regExp);
+  let key = '';
+  if (isMatch) {
+    key = isMatch[1];
+  }
+  return key;
+};

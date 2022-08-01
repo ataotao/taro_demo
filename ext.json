@@ -1,13 +1,13 @@
 {
   "extEnable": true,
-  "extAppid": "wxc3bcde9ca0b51a20",
+  "extAppid": "wx51f2f66c1f2b50fe",
   "directCommit": false,
   "debug": true,
   "ext": {
-    "domain": "https://weapp.sopei.cn",
-    "imgDomain": "https://img.sopei.cn",
+    "domain": "https://release-weapp.sosoqipei.com",
+    "imgDomain": "https://release-img.sosoqipei.com",
     "system": {
-      "ten_sys_flag": "c24a318522e02f17"
+      "ten_sys_flag": "1e6f97d34ab01e63"
     }
   }
 }
