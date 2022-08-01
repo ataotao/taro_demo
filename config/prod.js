@@ -3,14 +3,13 @@ module.exports = {
   env: {
     NODE_ENV: '"production"'
   },
-  defineConstants: {
-  },
+  defineConstants: {},
   mini: {
     // Taro 引入了一种名为预渲染（Prerender）的技术，和服务端渲染一样，
     // 在 Taro CLI 直接将要渲染的页面转换为 wxml 字符串，这样就获得了与原生小程序一致甚至更快的速度。
-    prerender: {
-      include: ['pages/nodes/nodes'], // `pages/nodes/nodes` 也会参与 prerender
-    }
+    // prerender: {
+    //   include: ['pages/nodes/nodes'] // `pages/nodes/nodes` 也会参与 prerender
+    // }
   },
   h5: {
     /**
@@ -24,7 +23,6 @@ module.exports = {
     //    */
     //   chain.plugin('analyzer')
     //     .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin, [])
-
     //   /**
     //    * 如果 h5 端首屏加载时间过长，可以使用 prerender-spa-plugin 插件预加载首页。
     //    * @docs https://github.com/chrisvfritz/prerender-spa-plugin
@@ -41,4 +39,4 @@ module.exports = {
     //     }))
     // }
   }
-}
+};

@@ -23,8 +23,14 @@ const store = dvaApp.getStore();
 class App extends Component<IProps> {
   componentDidMount() {
     // dvaApp.dispatch({ type: 'sys/error', payload: 'test' });
-    const extConfig = Taro.getExtConfigSync? Taro.getExtConfigSync(): {};
-    console.log(extConfig);
+
+    if (process.env.TARO_ENV === 'weapp') {
+      const extConfig = Taro.getExtConfigSync? Taro.getExtConfigSync(): {};
+      console.log(extConfig);
+    } else if (process.env.TARO_ENV === 'h5') {
+      console.log(process.env.TARO_ENV);
+      
+    }
   }
 
   componentDidShow() {}

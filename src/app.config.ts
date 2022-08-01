@@ -1,11 +1,10 @@
-export default {
+// 使用编译时宏函数 defineAppConfig 包裹配置对象，以获得类型提示和自动补全：
+export default defineAppConfig({
   appId: 'app',
   pages: [
     'pages/index/index',
-    // 'pages/nodes/index', 把要分包的页面从 `pages` 字段中删除
   ],
   // 在 `subpackages` 字段添加分包，如果目标是支付宝小程序，还需要加一个字段 `subPackages` 值和 `subpackages` 一致
-  // 不能在 `pages` 根目录也不能在 pages 目录外，需要在 `pages` 根目录另外新建文件夹做分包
   'subpackages': [
     {
       'root': 'pages_sub1',
@@ -44,4 +43,4 @@ export default {
     navigationBarTitleText: 'V2EX',
     navigationBarTextStyle: 'black'
   }
-};
+});

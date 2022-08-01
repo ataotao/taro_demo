@@ -1,3 +1,3 @@
-import sys from "./sys";
+import sys from './sys';
 
 export default [sys];
