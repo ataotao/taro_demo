@@ -1,8 +1,10 @@
+import { pages } from './utils/routes';
+
 // 使用编译时宏函数 defineAppConfig 包裹配置对象，以获得类型提示和自动补全：
 export default defineAppConfig({
   appId: 'app',
   // entryPagePath: '/919057cc9d0c6b81/pages/index/index',
-  pages: ['pages/index/index', '/pages/page/index'],
+  pages,
   // 在 `subpackages` 字段添加分包，如果目标是支付宝小程序，还需要加一个字段 `subPackages` 值和 `subpackages` 一致
   'subpackages': [{
     'root': 'pages_sub1',

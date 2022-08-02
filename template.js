@@ -19,7 +19,7 @@ import Taro, { useDidShow, useReady, useShareAppMessage } from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ConnectState } from 'src/types/connect';
+import { ConnectState } from '../../../types/connect';
 import './index.less';
 
 const Page = () => {

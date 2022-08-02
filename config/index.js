@@ -1,4 +1,5 @@
 import { resolve } from 'path';
+import { pages } from '../src/utils/routes';
 
 const config = {
   projectName: 'myApp',
@@ -84,10 +85,11 @@ const config = {
   h5: {
     router: {
       // basename: '919057cc9d0c6b81'
-      customRoutes: {
-        '/pages/index/index': '/:id',
-        '/pages/page/index': '/:id/page',
-      }
+      customRoutes: {'pages/index/index': '/:id', ...getCustomRoutes()}
+      // customRoutes: {
+      //   'pages/index/index': '/:id',
+      //   'pages/browser_login/index': '/:id/browser_login',
+      // }
     },
     publicPath: '/',
     staticDirectory: 'static',
@@ -106,6 +108,18 @@ const config = {
     }
   }
 };
+
+/** h5获取自定义动态路由, 设置前缀 */
+function getCustomRoutes() {
+  const customRoutes = {};
+  pages.forEach(page => {
+    customRoutes[`/${page}`] = `/:id/${page}`;
+  });
+  return customRoutes;
+}
+
+console.log(111, getCustomRoutes());
+
 
 export default function (merge) {
   if (process.env.NODE_ENV === 'development') {

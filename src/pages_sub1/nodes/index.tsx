@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Button, Text } from '@tarojs/components';
-import { ConnectState } from 'src/types/connect';
+import { ConnectState } from 'types/connect';
 
 type PageState = {};
 

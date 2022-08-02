@@ -1,3 +1,4 @@
 import sys from './sys';
+import global from './global';
 
-export default [sys];
+export default [global, sys];

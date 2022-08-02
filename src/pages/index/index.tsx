@@ -3,8 +3,8 @@ import { View, Text, Button, Image } from '@tarojs/components';
 import { useEnv, useNavigationBar, useModal, useToast } from 'taro-hooks';
 import { useDispatch, useSelector } from 'react-redux';
 import Taro, { useReady } from '@tarojs/taro';
-import { ConnectState } from '../../types/connect';
-import { fetchBrandCategories } from '../../../src/service';
+import { ConnectState } from '../../../types/connect';
+import { fetchBrandCategories } from '../../service';
 import logo from './hook.png';
 import './index.less';
 
@@ -14,7 +14,7 @@ interface IProps {
 }
 
 const Index: FC<IProps> = (props) => {
-  const { TEST } = useSelector((state: ConnectState) => state.sys);
+  // const { TEST } = useSelector((state: ConnectState) => state.sys);
   const dispatch = useDispatch();
   const env = useEnv();
   const [_, { setTitle }] = useNavigationBar({ title: 'Taro Hooks' });
@@ -28,8 +28,8 @@ const Index: FC<IProps> = (props) => {
   const [showToast] = useToast({ mask: true });
   
   useReady(() => {
-    fetchBrandCategories();
-    // Taro.navigateTo({ url: '/pages/page/index' });
+    // fetchBrandCategories();
+    // app.navigateTo({ url: '/pages/page/index' });
   });
   
   const handleModal = useCallback(() => {
