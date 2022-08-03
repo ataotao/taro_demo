@@ -10,31 +10,42 @@ module.exports = {
      * 调用方式 getApp().navigateTo({url: '/page/index/index'})
      */
     navigateTo(data) {
-      console.log(this);
-      
-      return COMMON.debounce(debounceNavigateTo.call(this, data), 600);
+      return COMMON.debounce(debounceNavigateTo.call(this, data), 300);
     },
   
     navigateBack(data) {
-      return Taro.navigateBack(data);
+      const options = formatPath(data);
+      return Taro.navigateBack(options);
     },
   
     switchTab(data) {
       const route = routeInterceptor(data);
       if (!route) return;
-      return Taro.switchTab(data);
+      return Taro.switchTab(route);
     },
   
     reLaunch(data) {
-      return Taro.reLaunch(data);
+      const options = formatPath(data);
+      return Taro.reLaunch(options);
     },
   
     redirectTo(data) {
       const route = routeInterceptor(data);
       if (!route) return;
-      return Taro.redirectTo(data);
+      return Taro.redirectTo(route);
     }
 };
+
+
+function formatPath(data) {
+  const { url = '' } = data;
+  let option = { ...data };
+  if (process.env.TARO_ENV === 'h5') {
+    // 补全url首字符为/
+    const new_url = url[0] === '/' ? url : `/${url}`;
+    option.url = `/$getTenSysFlag()/${new_url}`;
+  }
+}
 
 
 // 处理访问权限keys
@@ -90,14 +101,14 @@ function debounceNavigateTo(data) {
         const keys = CONFIGS[user_type + '_KEYS'];
         const inc = isIncKeys(keys, url);
         if (inc) {
-          return data;
+          return formatPath(data);
         } else {
           // 本地存储跳转前url
           COMMON.setLocal('jumpUrl', url);
           // 绑定手机
-          this.navigateTo(binding);
+          this.navigateTo(formatPath(binding));
         }
       } else {
-        return data;
+        return formatPath(data);
       }
     }

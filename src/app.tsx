@@ -112,7 +112,7 @@ class App extends Component<IProps> {
         console.log(getTenSysFlag());
 
         navigateTo({
-          url: '/919057cc9d0c6b81/pages/browser_login/index'
+          url: '/pages/browser_login/index'
         });
       }
     }
