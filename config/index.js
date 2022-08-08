@@ -1,5 +1,6 @@
 import { resolve } from 'path';
-import { pages } from '../src/utils/routes';
+// import { pages } from '../src/utils/routes';
+const pages = ['pages/index/index', 'pages/browser_login/index'];
 
 const config = {
   projectName: 'myApp',
